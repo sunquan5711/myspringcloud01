@@ -11,8 +11,12 @@
     <modules>
         <module>microservicecloud-api</module>
         <module>microservicecloud-provider-dept-8001</module>
+        <module>microservicecloud-provider-dept-8002</module>
+        <module>microservicecloud-provider-dept-8003</module>
         <module>microservicecloud-consumer-dept-80</module>
         <module>microservicecloud-eureka-7001</module>
+        <module>microservicecloud-eureka-7002</module>
+        <module>microservicecloud-eureka-7003</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -69,17 +73,18 @@
             </dependency>
 
             <dependency>
+                <groupId>log4j</groupId>
+                <artifactId>log4j</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>
+
+            <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
                 <version>${junit.version}</version>
                 <scope>test</scope>
             </dependency>
 
-            <dependency>
-                <groupId>log4j</groupId>
-                <artifactId>log4j</artifactId>
-                <version>${log4j.version}</version>
-            </dependency>
 
             <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
             <dependency>
@@ -91,5 +96,26 @@
 
         </dependencies>
     </dependencyManagement>
+
+    <build>
+        <finalName>microservicecloud</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <delimiters>
+                        <delimiter>$</delimiter>
+                    </delimiters>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
