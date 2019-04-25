@@ -1,0 +1,24 @@
+/**
+ * Copyright (c) 2019 LightFish Inc
+ * Created by sunquan on 2019-04-22.
+ */
+package com.sunquan.springcloud;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
+
+/**
+ *
+ *@author sunquan
+ *@create 2019-04-22
+ *@Email 2581557729@qq.com
+ */
+@SpringBootApplication
+@EnableEurekaServer
+public class EurekaServer7002_App {
+
+    public static void main(String[] args) {
+        SpringApplication.run(EurekaServer7002_App.class,args);
+    }
+}
